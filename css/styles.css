@@ -23,8 +23,7 @@ body {
     background-color: var(--back-color);
     color: var(--primery-text-colot);
     font-family: 'Roboto', sans-serif;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }    
 
 
@@ -157,7 +156,9 @@ width: 100%;
 height: 4px;
 border-radius: 2px;
 background-color:var(--button-color);
-transition: backround-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transform: scaleX(0);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+position 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigetion.plus.site:hover::after{
@@ -170,6 +171,7 @@ width: 100%;
 height: 4px;
 border-radius: 2px;
 background: var(--button-color);
+transform:scaleX(1)
 }
 
 .icon-envelope{
@@ -373,7 +375,12 @@ letter-spacing: 0.03em;
 /*what-we-do*/
 .we-do.section{
     padding-top: 0;
+    
 }
+.iten.what-we-do{
+    position: relative;
+}
+
 
 .what-we-do.title{
     text-align: center;
@@ -383,6 +390,7 @@ letter-spacing: 0.03em;
 }
 .what-we-do.list{
     display: flex;
+    
     flex-wrap: wrap;
 }
 .what-we-do.iten{
@@ -391,16 +399,7 @@ letter-spacing: 0.03em;
 .what-we-do.iten:nth-child(3n){
     margin-right: 0;
 }
-.what-we-do.link{
-    position: relative;
-    overflow: hidden;
-    transform: translate(100%);
-    
-    overflow: auto;
-    height: 70px;
-    width: 100%;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 .what-we-do-efect{
     text-transform: uppercase;
@@ -639,7 +638,7 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 50px;
 }
 .list.portfolio .iten{
-   
+
     margin-right: 8px;
 }
 .list.portfolio .iten:nth-child(5n) {
@@ -653,13 +652,15 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
     margin-top: -30px;
     margin-left: -30px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
+
 }
 
 .list.choice .iten-box{
     margin-left: 30px;
     margin-top: 30px;
     flex-basis: calc(100% / 3 - 30px);
+   
 
 }
 .choice.title{
@@ -669,10 +670,9 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 0.06em;
     color: var(--primery-text-colot);
     margin-bottom: 4px;
-    
-    
-    
+
 }
+
 .choice.text{
     font-weight: 400;
     font-size: 16px;
@@ -700,14 +700,16 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-bottom: 1px solid #EEEEEE;
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   }
 
+.iten-box{
+
+}
 
 
 
-
-.item-imege:hover .item-imege-text,
+.item-imege:hover .item-imege-text{}
  .iten-box:hover,
 .iten-box:focus{
     display: block;
@@ -722,6 +724,7 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .item-imege{
     position: relative;
     overflow: hidden;
+    
     
 }
 
@@ -739,9 +742,8 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(100%);
     
     opacity: 0;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform  1250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 
@@ -760,6 +762,7 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .container.down{
     align-items:baseline;
+    display: flex;
   }
   .customers-list{
 
@@ -811,13 +814,15 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden{
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .backdrop.is-hidden .model {
@@ -828,7 +833,7 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .modal{
     width: 528px;
     min-height: 581px;
-    background-color: #FFFFFF;
+    background-color: var(--back-color);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -836,8 +841,6 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 4px; 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-    
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -857,6 +860,7 @@ fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
    cursor: pointer;
 
 }
+
 
 
 
